@@ -8,7 +8,6 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/vasanthadevi/golang-angular/todo"
-	"golang.org/x/sys/unix"
 )
 
 // GetTodoListHandler returns all current todo items

@@ -1,6 +1,11 @@
 package main
 
-import "./handlers"
+import (
+	"github.com/gin-gonic/gin"
+	"path"
+	"path/filepath"
+	"handlers"
+)
 
 func main() {
 	r := gin.Default()
@@ -14,10 +19,10 @@ func main() {
 		}
 	})
 
-	r.GET("/todo", handlers.GetTodoListHandler)
-	r.POST("/todo", handlers.AddTodoHandler)
-	r.DELETE("/todo/:id", handlers.DeleteTodoHandler)
-	r.PUT("/todo", handlers.CompleteTodoHandler)
+	r.GET("/todo", GetTodoListHandler)
+	r.POST("/todo", AddTodoHandler)
+	r.DELETE("/todo/:id", DeleteTodoHandler)
+	r.PUT("/todo", CompleteTodoHandler)
 
 	err := r.Run(":3000")
 	if err != nil {
